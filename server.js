@@ -1,22 +1,12 @@
 const express = require('express');
 const PORT = 3000;
+const middleware = require('./middleware.js');
 
 const app = express();
 
 // app.get('/',(req,res) => {
 //     res.send('Hello Express !');
 // });
-
-let middleware = {
-    requiredAuthentication : function(req,res,next) {
-        console.log(`Private hit log : ${req.url}`);
-        next();
-    },
-    logger : function(req,res,next) {
-        console.log(`Second Private Hit Log on ${new Date().toString()} : ${req.url}`);
-        next();
-    }
-}
 
 //It will going to be get called for every page requested and every route.
 
