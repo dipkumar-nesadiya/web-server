@@ -1,5 +1,5 @@
 const express = require('express');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; //Deploy on heroku, we have to use heroku port so we used process.env.PORT or 3000 by default
 const middleware = require('./middleware.js');
 
 const app = express();
